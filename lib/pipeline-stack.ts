@@ -2,6 +2,7 @@ import {Stack, StackProps} from "aws-cdk-lib";
 import {Repository} from "aws-cdk-lib/aws-codecommit";
 import {Construct} from "constructs";
 import {CodeBuildStep, CodePipeline, CodePipelineSource} from "aws-cdk-lib/pipelines";
+import {LinuxBuildImage} from "aws-cdk-lib/aws-codebuild";
 
 export class WorkshopPipelineStack extends Stack {
     constructor(scope: Construct, id: string, props?: StackProps) {
@@ -21,6 +22,11 @@ export class WorkshopPipelineStack extends Stack {
                 // installCommands: ["npm i -g npm@latest"],
                 commands: ["node -v", "npm -v", "npm ci", "npm run build", "npx cdk synth"],
             }),
+            codeBuildDefaults: {
+                buildEnvironment: {
+                    buildImage: LinuxBuildImage.STANDARD_6_0,
+                }
+            }
         });
     }
 }
