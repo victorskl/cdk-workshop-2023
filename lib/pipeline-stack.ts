@@ -18,8 +18,8 @@ export class WorkshopPipelineStack extends Stack {
             pipelineName: "WorkshopPipeline",
             synth: new CodeBuildStep("SynthStep", {
                 input: CodePipelineSource.codeCommit(repo, "main"),
-                installCommands: ["npm i -g npm@latest"],
-                commands: ["npm ci", "npm run build", "npx cdk synth"],
+                // installCommands: ["npm i -g npm@latest"],
+                commands: ["node -v", "npm -v", "npm ci", "npm run build", "npx cdk synth"],
             }),
         });
     }
