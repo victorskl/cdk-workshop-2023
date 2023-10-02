@@ -15,12 +15,13 @@
     "@types/node": "20.6.3",
     "jest": "^29.7.0",
     "ts-jest": "^29.1.1",
-    "aws-cdk": "2.99.1",
     "ts-node": "^10.9.1",
     "typescript": "~5.2.2"
   },
   "dependencies": {
     "aws-cdk-lib": "2.99.1",
+    "aws-sdk": "^2.1467.0",
+    "cdk-dynamo-table-viewer": "^0.2.487",
     "constructs": "^10.0.0"
   }
 }
