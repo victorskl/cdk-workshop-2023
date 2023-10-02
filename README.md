@@ -1,9 +1,12 @@
-# Welcome to your CDK TypeScript project
+# cdk-workshop-2023
 
-You should explore the contents of this project. It demonstrates a CDK app with an instance of a stack (`CdkWorkshop2023Stack`)
-which contains an Amazon SQS queue that is subscribed to an Amazon SNS topic.
+From AWS CDK Immersion Day Workshop
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+## Notes
+
+- For CodeCommit, need to create an IAM User with `AWSCodeCommitFullAccess` policy 
+- For CodeBuild, need to bring CodeBuild environment to `buildImage: LinuxBuildImage.STANDARD_6_0`
+- Hotswap: `cdk deploy --hotswap` or `cdk watch`
 
 ## Useful commands
 

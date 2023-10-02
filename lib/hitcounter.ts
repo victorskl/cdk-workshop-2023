@@ -36,7 +36,7 @@ export class HitCounter extends Construct {
         // });
 
         this.table = new Table(this, "Hits", {
-            partitionKey: { name: "path", type: AttributeType.STRING },
+            partitionKey: {name: "path", type: AttributeType.STRING},
             encryption: TableEncryption.AWS_MANAGED,
             readCapacity: props.readCapacity ?? 5,
             removalPolicy: RemovalPolicy.DESTROY, // Add this and the import on the top line

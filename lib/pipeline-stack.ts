@@ -39,7 +39,7 @@ export class WorkshopPipelineStack extends Stack {
             new CodeBuildStep('TestViewerEndpoint', {
                 projectName: 'TestViewerEndpoint',
                 envFromCfnOutputs: {
-                    ENDPOINT_URL:  deploy.hcViewerUrl,
+                    ENDPOINT_URL: deploy.hcViewerUrl,
                 },
                 commands: [
                     'curl -Ssf $ENDPOINT_URL'
